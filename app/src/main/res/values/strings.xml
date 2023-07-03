@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Cardiac_Recoder_36_39</string>
     <string name="cardiac_recorder_app">Cardiac Recorder App</string>
+    <string name="keep_track_of_your_heart">Keep Track of Your Heart</string>
 </resources>

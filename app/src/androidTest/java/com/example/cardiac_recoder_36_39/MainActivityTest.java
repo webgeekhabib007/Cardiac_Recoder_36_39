@@ -35,7 +35,18 @@ public class MainActivityTest {
     public ActivityScenarioRule<ListActivity> mainActivityActivityScenarioRule = new ActivityScenarioRule<>(ListActivity.class);
     @Test
     public void testAddButton (){
+        onView(withId(R.id.listActivity)).check(matches(isDisplayed()));
+        onView(withId(R.id.add_button)).check(matches(isDisplayed()));
         onView(withId(R.id.add_button)).perform(click());
+        onView(withId(R.id.addLayout)).check(matches(isDisplayed()));
+
+        onView(withId(R.id.dateValue)).check(matches(isDisplayed()));
+        onView(withId(R.id.timeValue)).check(matches(isDisplayed()));
+        onView(withId(R.id.systolicValue)).check(matches(isDisplayed()));
+        onView(withId(R.id.diastolicValue)).check(matches(isDisplayed()));
+        onView(withId(R.id.heartRateValue)).check(matches(isDisplayed()));
+
+
         onView(withId(R.id.dateValue)).perform(ViewActions.typeText("12/10/2021"));
         onView(withId(R.id.timeValue)).perform(ViewActions.typeText("10:19"));
         onView(withId(R.id.systolicValue)).perform(ViewActions.typeText("120"));
@@ -47,7 +58,7 @@ public class MainActivityTest {
         pressBack();
         onView(withId(R.id.addButton)).perform(click());
 
-        SystemClock.sleep(8000);
+        SystemClock.sleep(5000);
         onView(ViewMatchers.withId(R.id.recycleview))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
 
@@ -63,9 +74,8 @@ public class MainActivityTest {
         onView(withId(R.id.timeValue2)).perform(ViewActions.typeText("5.30"));
         pressBack();
         onView(withId(R.id.updateButton)).perform(click());
-
-
-
+        SystemClock.sleep(5000);
+        onView(withId(R.id.listActivity)).check(matches(isDisplayed()));
     }
     @Test
     public void deleteTestButton(){
@@ -83,8 +93,8 @@ public class MainActivityTest {
         onView(withId(R.id.recycleview)).perform(
                 RecyclerViewActions.actionOnItemAtPosition(0, EFVIewAction.clickChildViewWithId(R.id.deleteButton)));
 
-
-
+        onView(withId(R.id.record)).check(matches(isDisplayed()));
+        SystemClock.sleep(5000);
     }
 
 

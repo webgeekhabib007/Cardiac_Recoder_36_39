@@ -40,7 +40,7 @@ This is a useful application for every individual who wishes to maintain a healt
   </tr>
   <tr>
     <td style="text-align: right; padding: 10px;">
-      <img src="https://github.com/Ehsanul-karim/Cardiac_Recoder_36_39/assets/60375625/7246bc20-cf1c-47b1-bf12-cf6f1e46338c" alt="Talha" style="border-radius: 50%; width: 80px; height: 80px;">
+      <img src="https://github.com/Ehsanul-karim/Cardiac_Recoder_36_39/assets/60375625/2178f29c-c179-4e59-9dda-d7663986a86f" alt="Talha" style="border-radius: 50%; width: 80px; height: 80px;">
     </td>
     <td style="padding: 10px; border: none;">
       - <a href="https://github.com/Ehsanul-karim">Ehsanul Karim</a><br>

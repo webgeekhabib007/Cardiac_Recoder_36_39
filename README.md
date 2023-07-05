@@ -25,12 +25,29 @@ This is a useful application for every individual who wishes to maintain a healt
 <hr>
 
 ## Authors
-- [Habibur Rahman](https://github.com/webgeekhabib007)<br>
-Roll:1907036<br>
-Department of Computer Science and Engineering<br>
-Khulna University of Engineering & Technology, Khulna 9203.
+<table style="border-collapse: collapse;">
+  <tr>
+    <td style="text-align: right; padding: 10px;">
+      <img src="https://avatars.githubusercontent.com/u/73267589?v=4" alt="Habib" style="border-radius: 50%; width: 80px; height: 80px;">
+    </td>
+    <td style="padding: 10px; border: none;">
+      - <a href="https://github.com/webgeekhabib007">Habibur Rahman</a><br>
+      Roll: 1907036<br>
+      Department of Computer Science and Engineering<br>
+      Khulna University of Engineering & Technology, Khulna 9203.
+    </td>
 
-- [Ehsanul karim](https://github.com/Ehsanul-karim)<br>
-Roll:1907039<br>
-Department of Computer Science and Engineering<br>
-Khulna University of Engineering & Technology, Khulna 9203
+  </tr>
+  <tr>
+    <td style="text-align: right; padding: 10px;">
+      <img src="https://github.com/Ehsanul-karim/Cardiac_Recoder_36_39/assets/60375625/7246bc20-cf1c-47b1-bf12-cf6f1e46338c" alt="Talha" style="border-radius: 50%; width: 80px; height: 80px;">
+    </td>
+    <td style="padding: 10px; border: none;">
+      - <a href="https://github.com/Ehsanul-karim">Ehsanul Karim</a><br>
+      Roll: 1907039<br>
+      Department of Computer Science and Engineering<br>
+      Khulna University of Engineering & Technology, Khulna 9203
+    </td>
+  </tr>
+</table>
+

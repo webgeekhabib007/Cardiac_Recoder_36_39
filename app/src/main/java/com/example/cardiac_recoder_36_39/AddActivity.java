@@ -132,11 +132,11 @@ public class AddActivity extends AppCompatActivity {
     }
 
     private void writeData() {
-        sharedPreferences = getSharedPreferences("faija",MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("Habib",MODE_PRIVATE);
         editor = sharedPreferences.edit();
         gson = new Gson();
         String jsonString = gson.toJson(DataList.array);
-        editor.putString("eimu",jsonString);
+        editor.putString("Talha",jsonString);
         editor.apply();
     }
 }

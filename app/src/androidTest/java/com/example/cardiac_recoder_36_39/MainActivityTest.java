@@ -1,11 +1,14 @@
 package com.example.cardiac_recoder_36_39;
 
+import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.Espresso.pressBack;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.CoreMatchers.anything;
 import static org.junit.Assert.*;
 
 import androidx.test.espresso.action.ViewActions;
@@ -21,6 +24,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 import static org.junit.Assert.*;
+
+import android.os.SystemClock;
 
 
 @RunWith(JUnit4.class)
@@ -41,15 +46,19 @@ public class MainActivityTest {
         onView(withId(R.id.commentValue)).perform(ViewActions.typeText("UI test data insert"));
         pressBack();
         onView(withId(R.id.addButton)).perform(click());
+
+        SystemClock.sleep(8000);
         onView(ViewMatchers.withId(R.id.recycleview))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
-        pressBack();
-        onView(ViewMatchers.withId(R.id.recycleview))
-                .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
+
+        onView(withId(R.id.DateValue_view)).
+                check(matches((withText("12/10/2021"))));
+
         onView(withId(R.id.editButton)).perform(click());
 
         onView(withId(R.id.dateValue2)).perform(ViewActions.clearText());
         onView(withId(R.id.dateValue2)).perform(ViewActions.typeText("11/10/2021"));
+
         onView(withId(R.id.timeValue2)).perform(ViewActions.clearText());
         onView(withId(R.id.timeValue2)).perform(ViewActions.typeText("5.30"));
         pressBack();

@@ -14,6 +14,13 @@ import android.widget.Toast;
 import com.example.cardiac_recoder_36_39.model.CardiacModel;
 import com.google.gson.Gson;
 
+/**
+ * This class is used to create
+ * the form for the user to
+ * give input.
+ * @version 1.0
+ * @since 2020-03-08
+ */
 public class AddActivity extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
@@ -50,38 +57,27 @@ public class AddActivity extends AppCompatActivity {
          * button for save the data to
          * the database
          */
-
-
         save_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 inputFormat();
-//                date = date_input.getText().toString();
-//                time = time_input.getText().toString();
-//                systolic = systolic_input.getText().toString();
-//                diastolic = diastolic_input.getText().toString();
-//                heartrate = heartrate_input.getText().toString();
-//                comment = comment_input.getText().toString();
-//                cardiacModel = new CardiacModel(date,time,systolic,diastolic,heartrate,comment);
-//                DataList.array.add(cardiacModel);
-//                //  new DataList().addRecord(cardiacModel);
-//                PreferenceManager.getDefaultSharedPreferences(AddActivity.this).edit().clear().commit();
-//                writeData();
-//                // dataArrayList.add(cardiacModel);
-//                //DataList.array.add(cardiacModel);
-//                MainActivity.customAdapter.notifyDataSetChanged();
-//                Toast.makeText(AddActivity.this,"Data Insertion Successful",Toast.LENGTH_LONG).show();
-
-
-                //finish();
-
-                //public CardiacModel(Long id, String date, String time, String systolic, String diastolic, String heartRate, String comment) {
+//
             }
         });
 
     }
 
+    /**
+     * This method is used to
+     * check the input format
+     * and save the data to
+     * the database.
+     * @return void
+     * @exception NumberFormatException
+     * @see NumberFormatException
+     * @see TextUtils
+     */
     private void inputFormat() {
         if(!TextUtils.isEmpty(time_input.getText())) {
             if (!TextUtils.isEmpty(date_input.getText())) {
@@ -131,6 +127,12 @@ public class AddActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method is used to
+     * write the data to the
+     * database.
+     * @return void
+     */
     private void writeData() {
         sharedPreferences = getSharedPreferences("Habib",MODE_PRIVATE);
         editor = sharedPreferences.edit();

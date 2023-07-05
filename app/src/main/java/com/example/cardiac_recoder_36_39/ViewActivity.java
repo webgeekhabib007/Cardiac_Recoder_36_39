@@ -17,6 +17,9 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
+/**
+ * This class is for showing the details of the
+ */
 public class ViewActivity extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
@@ -28,12 +31,12 @@ public class ViewActivity extends AppCompatActivity {
     CardiacModel cardiacModel;
     Button edit_button;
 
-    /**
-     * creating the form where details of the
-     * given data will show
-     * @param savedInstanceState
-     */
 
+    /**
+     * @param savedInstanceState If the activity is being re-initialized after
+     *                           previously being shut down then this Bundle contains the data it most
+     *                           recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,7 +76,9 @@ public class ViewActivity extends AppCompatActivity {
     }
 
 
-
+    /**
+     * This method is for getting the data from the intent
+     */
     void getAndSetIntentData(){
         if(getIntent().hasExtra(CARDIAC_MODEL)){
 
@@ -86,7 +91,7 @@ public class ViewActivity extends AppCompatActivity {
     }
 
     /**
-     * Data retrieve from shared preference
+     * This method is for reading the data from the shared preference
      */
 
     private void readData()

@@ -14,11 +14,11 @@ public class UnitTest {
     @Test
     public void testAddRecord(){
         DataList recordList= new DataList();
-        CardiacModel modelClass= new CardiacModel("1-1-2000","10:20","89","67","67","dummy");
+        CardiacModel modelClass= new CardiacModel("1-1-2000","10:20","89","67","67","dummy1");
         recordList.addRecord(modelClass);
         assertEquals(1, recordList.array.size());
 
-        CardiacModel modelClass1=new CardiacModel("1-1-2000","10:20","89","67","67","dummy");
+        CardiacModel modelClass1=new CardiacModel("1-1-2000","10:20","89","67","67","dummy2");
         recordList.addRecord(modelClass1);
         assertEquals(2,recordList.array.size());
         assertTrue(recordList.array.contains(modelClass));
@@ -31,7 +31,7 @@ public class UnitTest {
     @Test
     public void addRecordExTest(){
         DataList recordList= new DataList();
-        CardiacModel modelClass= new CardiacModel("1-1-2000","10:20","89","67","67","dummy");
+        CardiacModel modelClass= new CardiacModel("1-1-2000","10:20","89","67","67","dummy2");
         recordList.addRecord(modelClass);
         assertThrows(IllegalArgumentException.class, () -> recordList.addRecord(modelClass));
     }
@@ -39,23 +39,20 @@ public class UnitTest {
     public void testDeleteRecord() {
         //int position=0;
         DataList recordList = new DataList();
-        CardiacModel record1 = new CardiacModel ("1-1-2000", "10:20", "89", "67", "67", "dummy");
+        CardiacModel record1 = new CardiacModel ("1-1-2000", "10:20", "89", "67", "67", "dummy1");
         recordList.addRecord(record1);
         assertEquals(1, recordList.array.size());
-
-        DataList recordList1 = new DataList();
-        CardiacModel record2 = new CardiacModel("1-1-2000", "10:20", "89", "67", "67", "dummy");
+        assertTrue(recordList.array.contains(record1));
+        CardiacModel record2 = new CardiacModel("1-1-2000", "10:20", "89", "67", "67", "dummy2");
         recordList.addRecord(record2);
         assertEquals(2, recordList.array.size());
-
-
-        DataList recordList2 = new DataList();
-        CardiacModel record3 = new CardiacModel("1-1-2000", "10:20", "89", "67", "67", "dummy");
+        assertTrue(recordList.array.contains(record2));
+        CardiacModel record3 = new CardiacModel("1-1-2000", "10:20", "89", "67", "67", "dummy3");
         recordList.addRecord(record3);
         assertEquals(3, recordList.array.size());
+        assertTrue(recordList.array.contains(record3));
 
-        assertTrue(recordList.array.contains(record1));
-        assertTrue(recordList.array.contains(record2));
+
 
         recordList.deleteRecord(0);
         assertEquals(2, recordList.array.size());
@@ -65,7 +62,11 @@ public class UnitTest {
         assertEquals(1, recordList.array.size());
         assertFalse(recordList.array.contains(record2));
 
-        assertThrows(IllegalArgumentException.class, () -> recordList.deleteRecord(1));
+        recordList.deleteRecord(0);
+        assertEquals(0, recordList.array.size());
+        assertFalse(recordList.array.contains(record3));
+
+        assertThrows(IllegalArgumentException.class, () -> recordList.deleteRecord(0));
     }
     @Test
     public void testCount(){

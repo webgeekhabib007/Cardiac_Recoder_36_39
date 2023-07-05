@@ -212,16 +212,18 @@
         android:layout_marginBottom="27dp"
         tools:ignore="MissingConstraints">
 
-        <Button
-            android:id="@+id/updateButton"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:background="@drawable/button_border"
-            android:textColor="@color/DeepSkyBlue"
-            android:text="Update"
-            android:padding="10dp"
-            />
-
     </FrameLayout>
+
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_border"
+        android:padding="10dp"
+        android:text="Update"
+        android:textColor="@color/DeepSkyBlue"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="207dp"
+        tools:layout_editor_absoluteY="648dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

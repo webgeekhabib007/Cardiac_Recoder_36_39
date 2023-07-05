@@ -74,17 +74,17 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CardiacVie
         if (Integer.parseInt(cardiacModel.getDiastolic())>60 && (Integer.parseInt(cardiacModel.getDiastolic())<90))holder.diastolicTextView.setTextColor(Color.parseColor("#FF018786"));
             // else if(Integer.parseInt(modelClass.getDiastolic())<89)
             // holder.tx3.setTextColor(Color.parseColor("#3C96DD"));
-        else holder.diastolicTextView.setTextColor(Color.parseColor("#C3473E"));
+        else holder.diastolicTextView.setTextColor(Color.parseColor("#C36830"));
 
 
         if (Integer.parseInt(cardiacModel.getSystolic())>90 &&( Integer.parseInt(cardiacModel.getSystolic())<140)) holder.systolicTextView.setTextColor(Color.parseColor("#FF018786"));
             //else if(Integer.parseInt(modelClass.getSystolic())<=140) holder.tx2.setTextColor(Color.parseColor("#3C96DD"));
-        else holder.systolicTextView.setTextColor(Color.parseColor("#C3473E"));
+        else holder.systolicTextView.setTextColor(Color.parseColor("#C36830"));
 
 
         if (Integer.parseInt(cardiacModel.getHeartRate())>60 && Integer.parseInt(cardiacModel.getHeartRate())<100) holder.heartTextView.setTextColor(Color.parseColor("#FF018786"));
         else if(Integer.parseInt(cardiacModel.getHeartRate())>=40) holder.heartTextView.setTextColor(Color.parseColor("#3C96DD"));
-        else holder.heartTextView.setTextColor(Color.parseColor("#C3473E"));
+        else holder.heartTextView.setTextColor(Color.parseColor("#C36830"));
 
 
     }

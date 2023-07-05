@@ -8,6 +8,19 @@
     tools:context=".ViewActivity"
     >
 
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foreground="@drawable/foreground_design"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cardiac_logo"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-30dp" />
+
+
+
     <TextView
         android:textStyle="bold"
         android:id="@+id/detail_Header"
@@ -16,7 +29,7 @@
         android:layout_marginStart="38dp"
         android:layout_marginTop="50dp"
         android:text="View Details :"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="27sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="Date:"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/detail_Header"
         app:layout_constraintTop_toBottomOf="@+id/detail_Header" />
@@ -52,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="Time:"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/detail_Header"
         app:layout_constraintTop_toBottomOf="@+id/Date_view" />
@@ -76,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="Systolic:"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/detail_Header"
         app:layout_constraintTop_toBottomOf="@+id/Time_view" />
@@ -100,7 +113,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="Diastolic:"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/detail_Header"
         app:layout_constraintTop_toBottomOf="@+id/Systolic_view" />
@@ -124,7 +137,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="Heart Rate:"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/detail_Header"
         app:layout_constraintTop_toBottomOf="@+id/Diastolic_view" />
@@ -148,7 +161,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="Comment:"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/detail_Header"
         app:layout_constraintTop_toBottomOf="@+id/HeartRate_view" />
@@ -181,8 +194,11 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textSize="24sp"
-            android:backgroundTint="@color/DeepSkyBlue"
+            android:background="@drawable/button_border"
+            android:textColor="@color/DeepSkyBlue"
             android:text="Edit"
+            android:padding="10dp"
             />
+
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

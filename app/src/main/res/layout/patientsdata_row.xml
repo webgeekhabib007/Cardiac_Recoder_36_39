@@ -10,8 +10,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_margin="10dp"
-        android:background="#DAE6EF"
-        android:backgroundTint="#DAE6EF"
+        android:background="#441c4c"
+        android:backgroundTint="#441c4c"
+        android:elevation="10dp"
         app:cardCornerRadius="10dp">
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -31,6 +32,7 @@
                     android:layout_marginLeft="5dp"
                     android:text="Date: "
                     android:textSize="32sp"
+                    android:textColor="@color/white"
                     android:textStyle="bold"
                     app:autoSizeTextType="uniform" />
 
@@ -41,6 +43,7 @@
                     android:layout_marginLeft="5dp"
                     android:text="Systolic: "
                     android:textSize="34sp"
+                    android:textColor="@color/white"
                     app:autoSizeTextType="uniform" />
 
                 <TextView
@@ -50,6 +53,7 @@
                     android:layout_marginLeft="5dp"
                     android:text="Diastolic: "
                     android:textSize="34sp"
+                    android:textColor="@color/white"
                     app:autoSizeTextType="uniform" />
 
                 <TextView
@@ -59,6 +63,7 @@
                     android:layout_marginLeft="5dp"
                     android:text="Heart Rate: "
                     android:textSize="34sp"
+                    android:textColor="@color/white"
                     app:autoSizeTextType="uniform" />
 
             </LinearLayout>

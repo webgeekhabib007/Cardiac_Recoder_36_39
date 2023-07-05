@@ -10,10 +10,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_margin="10dp"
+        android:background="#DAE6EF"
+        android:backgroundTint="#DAE6EF"
         app:cardCornerRadius="10dp">
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:background= "@color/white"
             android:layout_margin="10dp"
             android:layout_height="match_parent">
 
@@ -29,7 +30,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:text="Date: "
-                    android:textSize="48sp"
+                    android:textSize="32sp"
                     android:textStyle="bold"
                     app:autoSizeTextType="uniform" />
 
@@ -39,7 +40,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:text="Systolic: "
-                    android:textSize="48sp"
+                    android:textSize="34sp"
                     app:autoSizeTextType="uniform" />
 
                 <TextView
@@ -48,7 +49,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:text="Diastolic: "
-                    android:textSize="48sp"
+                    android:textSize="34sp"
                     app:autoSizeTextType="uniform" />
 
                 <TextView
@@ -57,7 +58,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:text="Heart Rate: "
-                    android:textSize="48sp"
+                    android:textSize="34sp"
                     app:autoSizeTextType="uniform" />
 
             </LinearLayout>
@@ -65,8 +66,8 @@
 
             <ImageView
                 android:id="@+id/deleteButton"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
                 android:background="@drawable/ic_delete_24" />

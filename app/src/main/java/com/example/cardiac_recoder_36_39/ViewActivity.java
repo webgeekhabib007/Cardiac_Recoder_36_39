@@ -91,9 +91,9 @@ public class ViewActivity extends AppCompatActivity {
 
     private void readData()
     {
-        sharedPreferences = getSharedPreferences("faija",MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("Habib",MODE_PRIVATE);
         gson = new Gson();
-        String jsonString = sharedPreferences.getString("eimu",null);
+        String jsonString = sharedPreferences.getString("Talha",null);
         Type type = new TypeToken<ArrayList<CardiacModel>>(){}.getType();
         DataList.array = gson.fromJson(jsonString,type);
         if(DataList.array ==null)

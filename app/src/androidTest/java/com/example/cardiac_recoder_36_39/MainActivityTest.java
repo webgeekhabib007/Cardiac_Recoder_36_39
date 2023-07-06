@@ -28,11 +28,18 @@ import static org.junit.Assert.*;
 import android.os.SystemClock;
 
 
+/**
+ * This class is for showing the details of the main activity
+ */
 @RunWith(JUnit4.class)
 @LargeTest
 public class MainActivityTest {
     @Rule
     public ActivityScenarioRule<ListActivity> mainActivityActivityScenarioRule = new ActivityScenarioRule<>(ListActivity.class);
+
+    /**
+     * This method is for showing the details of the main activity
+     */
     @Test
     public void testAddButton (){
         onView(withId(R.id.listActivity)).check(matches(isDisplayed()));
@@ -77,6 +84,10 @@ public class MainActivityTest {
         SystemClock.sleep(5000);
         onView(withId(R.id.listActivity)).check(matches(isDisplayed()));
     }
+
+    /**
+     * This method is for showing the details of the main activity
+     */
     @Test
     public void deleteTestButton(){
         onView(withId(R.id.add_button)).perform(click());

@@ -13,12 +13,21 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+/**
+ * This class is used to login to the app
+ */
 public class LoginActivity extends AppCompatActivity {
     EditText etEmail,etPassword;
     Button btnLogin;
     TextView tvRegister;
 
     private FirebaseAuth mAuth;
+
+    /**
+     * @param savedInstanceState If the activity is being re-initialized after
+     *                           previously being shut down then this Bundle contains the data it most
+     *                           recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +40,9 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         tvRegister.setOnClickListener(new View.OnClickListener() {
+            /**
+             * @param v The view that was clicked.
+             */
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
@@ -39,6 +51,9 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
+            /**
+             * @param v The view that was clicked.
+             */
             @Override
             public void onClick(View v) {
                 String email = etEmail.getText().toString().trim(); // trim() removes spaces
@@ -62,6 +77,10 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * @param email
+     * @param password
+     */
     private void userLogin(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {

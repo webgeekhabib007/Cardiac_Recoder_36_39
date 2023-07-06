@@ -18,6 +18,10 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
+/**
+ * This class is used to add and delete records from the main page list.
+ * @version 1.0
+ */
 public class ListActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
@@ -28,6 +32,11 @@ public class ListActivity extends AppCompatActivity {
     SharedPreferences.Editor editor;
     Gson gson;
 
+    /**
+     * @param savedInstanceState If the activity is being re-initialized after previously
+     *                           previously being shut down then this Bundle contains the data it most
+     *                           recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +54,12 @@ public class ListActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+
         customAdapter.setCustomClickListener(new CustomAdapter.CustomClickListener() {
+            /**
+             * @param position position of the item
+             * @param v view of the item
+             */
             @Override
             public void customOnClick(int position, View v) {
                 Intent i = new Intent(ListActivity.this,ViewActivity.class);
@@ -53,17 +67,19 @@ public class ListActivity extends AppCompatActivity {
                 startActivity(i);
             }
 
+            /**
+             * @param position position of the item
+             * @param  v view of the item
+             */
             @Override
             public void customOnLongClick(int position, View v) {
 
             }
 
-            /**
-             * Delete button to delete data
-             * from main page list.
-             * @param position
-             */
 
+            /**
+             * @param position position of the item
+             */
             @Override
             public void onDeleteClick(int position) {
                 // dataArrayList.remove(position);
@@ -79,6 +95,9 @@ public class ListActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * This method is used to write data in the shared preference.
+     */
     private void writeData() {
         sharedPreferences = getSharedPreferences("Habib",MODE_PRIVATE);
         editor = sharedPreferences.edit();
@@ -88,6 +107,9 @@ public class ListActivity extends AppCompatActivity {
         editor.apply();
     }
 
+    /**
+     * This method is used to read data from the shared preference.
+     */
     private void readData() {
         sharedPreferences = getSharedPreferences("Habib",MODE_PRIVATE);
         gson = new Gson();

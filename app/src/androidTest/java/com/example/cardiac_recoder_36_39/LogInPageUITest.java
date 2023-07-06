@@ -24,6 +24,10 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+
+/**
+ * This class is for showing the details of the login page
+ */
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 
@@ -31,6 +35,10 @@ import org.junit.runner.RunWith;
 public class LogInPageUITest {
     @Rule
     public ActivityScenarioRule<LoginActivity> activityRule = new ActivityScenarioRule<>(LoginActivity.class);
+
+    /**
+     * This method is for showing the details of the login page
+     */
     @Test
     public void testLogInPage() {
         onView(withId(R.id.loginActivity)).check(matches(isDisplayed()));

@@ -19,28 +19,51 @@ import com.example.cardiac_recoder_36_39.model.CardiacModel;
 
 import java.util.ArrayList;
 
+/**
+ * CustomAdapter class is used to create a custom adapter for the recycler view
+ * It is used to display the data in the recycler view
+ * It is used to set the data in the recycler view
+ */
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CardiacViewHolder> {
     private static CustomClickListener customClickListener;
     private ArrayList<CardiacModel> cardiacModelsArrayList;
     private CardiacModel cardiacModel;
     private final Context context;
 
+    /**
+     * Constructor of the class
+     * @param context context of the activity
+     * @param rList  list of the data
+     */
     public CustomAdapter(Context context, ArrayList<CardiacModel> rList) {
         this.cardiacModelsArrayList =rList;
         this.context = context;
 
     }
 
+    /**
+     * @param cardiacModelsArrayList list of the data
+     * @param context context of the activity
+     */
     public CustomAdapter(ArrayList<CardiacModel> cardiacModelsArrayList, Context context) {
         this.cardiacModelsArrayList = cardiacModelsArrayList;
         this.context = context;
     }
 
+    /**
+     * @param customClickListener custom click listener
+     */
     public void setCustomClickListener(CustomClickListener customClickListener) //called from mainactivity
     {
         this.customClickListener = customClickListener; //setting data
     }
 
+    /**
+     * @param parent   The ViewGroup into which the new View will be added after it is bound to
+     *                 an adapter position.
+     * @param viewType The view type of the new View.
+     * @return
+     */
     @NonNull
     @Override
     public CardiacViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {  //an object of roomview holder which contain itemview
@@ -48,6 +71,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CardiacVie
         return new CardiacViewHolder(view); //passed in itemview
 
     }
+
+    /**
+     * @param holder   The ViewHolder which should be updated to represent the contents of the
+     *                 item at the given position in the data set.
+     * @param position The position of the item within the adapter's data set.
+     */
     @Override
     public void onBindViewHolder(@NonNull CustomAdapter.CardiacViewHolder holder,@SuppressLint("RecyclerView") int position) {
         if (!cardiacModelsArrayList.isEmpty()) cardiacModel = DataList.array.get(position);
@@ -89,10 +118,17 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CardiacVie
 
     }
 
+    /**
+     * @return Returns the total number of items in the data set held by the adapter.
+     */
     @Override
     public int getItemCount() {
         return cardiacModelsArrayList.size();
     }
+
+    /**
+     * CustomClickListener interface is used to create a custom click listener
+     */
     public interface CustomClickListener {
         void customOnClick(int position, View v);
 
@@ -102,6 +138,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CardiacVie
         //declaring method which will provide to main activity //position and view will also be provided
     }
 
+    /**
+     * CardiacViewHolder class is used to create a view holder for the recycler view
+     */
     public class CardiacViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
         TextView systolicTextView;
         TextView heartTextView;
@@ -124,11 +163,18 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CardiacVie
 
         } //to create view of every list item
 
+        /**
+         * @param view The view that was clicked. //view is passed to mainactivity
+         */
         @Override
         public void onClick(View view) {
             customClickListener.customOnClick(getAdapterPosition(), view);  //position and view setting to provide to mainactivity
         }
 
+        /**
+         * @param view The view that was clicked and held. //view is passed to mainactivity
+         * @return true if the callback consumed the long click, false otherwise.
+         */
         public boolean onLongClick(View view) {
 
             customClickListener.customOnLongClick(getAdapterPosition(), view);  //position and view setting to provide to mainactivity

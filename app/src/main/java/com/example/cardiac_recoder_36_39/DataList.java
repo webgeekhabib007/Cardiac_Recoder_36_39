@@ -4,6 +4,10 @@ import com.example.cardiac_recoder_36_39.model.CardiacModel;
 
 import java.util.ArrayList;
 
+/**
+ * This class is used to add and delete records from the main page list.
+ * @version 1.0
+ */
 public class DataList {
     public static ArrayList<CardiacModel> array = new ArrayList<>();
     /**

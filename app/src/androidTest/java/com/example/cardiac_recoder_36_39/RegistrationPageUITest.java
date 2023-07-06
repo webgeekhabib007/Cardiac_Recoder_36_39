@@ -18,6 +18,9 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+/**
+ * This class is for showing the details of the registration page
+ */
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 
@@ -25,6 +28,9 @@ public class RegistrationPageUITest {
     @Rule
     public ActivityScenarioRule<RegisterActivity> activityRule = new ActivityScenarioRule<>(RegisterActivity.class);
 
+    /**
+     * This method is for showing the details of the registration page
+     */
     @Test
     public void testRegistrationPage() {
         onView(withId(R.id.regLayout)).check(matches(isDisplayed()));

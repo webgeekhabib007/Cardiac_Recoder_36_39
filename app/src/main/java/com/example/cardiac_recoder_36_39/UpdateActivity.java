@@ -17,6 +17,9 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
+/**
+ * This class is used to update the data
+ */
 public class UpdateActivity extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
@@ -29,13 +32,10 @@ public class UpdateActivity extends AppCompatActivity {
     CardiacModel cardiacModel;
 
     /**
-     * Update the data from this page.
-     * Users can update their data by
-     * inserting new data in this page.
-     * @param savedInstanceState
+     * @param savedInstanceState If the activity is being re-initialized after
+     *                           previously being shut down then this Bundle contains the data it most
+     *                           recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
      */
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +64,9 @@ public class UpdateActivity extends AppCompatActivity {
         heartrate_input.setText(cardiacModel.getHeartRate().toString());
         comment_input.setText(cardiacModel.getComment().toString());
         update_button.setOnClickListener(new View.OnClickListener() {
+            /**
+             * @param view The view that was clicked.
+             */
             @Override
             public void onClick(View view) {
                 date = date_input.getText().toString();
@@ -86,8 +89,9 @@ public class UpdateActivity extends AppCompatActivity {
 
     }
 
+
     /**
-     * retrieve data in the shared preference.
+     * read data from the shared preference.
      */
     private void readData()
     {
